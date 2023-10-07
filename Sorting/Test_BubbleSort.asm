@@ -41,4 +41,4 @@
 		syscall
 		
 .include "./BubbleSort.asm"
-.include "./PrintArray.asm"
+.include "../Utilities/PrintArray.asm"

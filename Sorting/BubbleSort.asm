@@ -1,4 +1,9 @@
-# Bubble Sort Subroutine
+####################################################
+################### BUBBLE SORT ####################
+####################################################
+# Sorts a given array using the bubble sort algorithm
+
+
 bubbleSort:
 # Arguments
 	# $a1 : length of array
