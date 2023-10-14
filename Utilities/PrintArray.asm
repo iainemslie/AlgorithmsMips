@@ -1,4 +1,8 @@
-# Print Array Subroutine
+####################################################
+################### PRINT ARRAY ####################
+####################################################
+# Prints a given array through iteration
+
 printArray:
 # Arguments
 	# $a1 : length of array

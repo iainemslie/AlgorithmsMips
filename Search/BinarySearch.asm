@@ -17,7 +17,7 @@ binarySearch:
   # hi = length - 1
   addi $t1, $a1, -1
   
-  loLTEQHigh:
+  loLTEQHi:
     # mid = lo + (hi - lo) / 2
     sub $t2, $t1, $t0 # (hi - lo)
     div $t3, $t2, 2 	# (hi - lo) / 2
@@ -30,22 +30,22 @@ binarySearch:
     bgt $a2, $t4, valueGreaterThanMid
     beq $a2, $t4, valueEqualToMid
     returnLTGT:
-      ble $t0, $t1, loLTEQHigh # while(lo <= hi)
+      ble $t0, $t1, loLTEQHi # while(lo <= hi)
       li $v0, -1 # Return -1 if nothing is found
       j exitBinarySearch
     
   valueLessThanMid:
     div $t5, $t3, $a3 # (divide by bytes)
-    add $t1, $t5, -1
+    add $t1, $t5, -1  # hi = mid - 1
     j returnLTGT
   
   valueGreaterThanMid:
     div $t5, $t3, $a3 # (divide by bytes)
-    add $t0, $t5, 1
+    add $t0, $t5, 1   # lo = mid + 1
     j returnLTGT
     
   valueEqualToMid:
-    div $v0, $t3, $a3 # return index of mid (divided by bytes)
+    div $v0, $t3, $a3 # return index of mid (divide by bytes)
     j exitBinarySearch
   
   exitBinarySearch:
